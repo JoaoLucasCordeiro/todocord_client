@@ -40,9 +40,9 @@ const TaskCard = ({
     taskDueTime: "",
   });
 
-  const handleButtonClick = () => {
-    setIsModalOpen(true);
-  };
+  // const handleButtonClick = () => {
+  //   setIsModalOpen(true);
+  // };
 
   const handleDeleteTask = () => {
     setDeleteTasksModalIsOpen(true);
@@ -73,7 +73,7 @@ const TaskCard = ({
 
   const handleDelete = async () => {
     try {
-      const response = await fetch(`http://localhost:8080/tasks/${id}`, {
+      const response = await fetch(`https://todocord-api.onrender.com/tasks/${id}`, {
         method: 'DELETE',
       });
       if (response.ok) {
@@ -90,7 +90,7 @@ const TaskCard = ({
 
   const handleUpdate = async (updatedTask: Task) => {
     try {
-      const response = await fetch(`http://localhost:8080/tasks/${id}`, {
+      const response = await fetch(`https://todocord-api.onrender.com/tasks/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

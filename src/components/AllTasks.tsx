@@ -27,7 +27,7 @@ const AllTasks = () => {
 
   const fetchTasks = async () => {
     try {
-      const response = await fetch("http://localhost:8080/tasks");
+      const response = await fetch("https://todocord-api.onrender.com/tasks");  
       const result = await response.json();
       setData(result);
     } catch (error) {
